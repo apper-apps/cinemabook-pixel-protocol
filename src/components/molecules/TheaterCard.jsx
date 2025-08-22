@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import ShowtimeButton from "@/components/molecules/ShowtimeButton";
 import ApperIcon from "@/components/ApperIcon";
-import ShowtimeButton from "./ShowtimeButton";
 
 const TheaterCard = ({ theater, selectedShowtime, onShowtimeSelect }) => {
   return (
@@ -46,12 +46,14 @@ const TheaterCard = ({ theater, selectedShowtime, onShowtimeSelect }) => {
           // Ensure showtime is valid and has required properties
           if (!showtime) return null;
           
-          // Extract time with null safety - ensure it's always a string
+          // Extract time with comprehensive null safety - ensure it's always a string
           const rawTime = typeof showtime === 'string' ? showtime : showtime?.time;
-          const time = rawTime && typeof rawTime === 'string' ? rawTime : 'TBA';
+          const safeTime = rawTime && typeof rawTime === 'string' ? rawTime : 'TBA';
           
-          // Generate unique ID with safe time value
-          const showtimeId = `${theater.Id}-${time}`;
+          // Additional safety for any time operations that might use split()
+          const timeForOperations = safeTime !== 'TBA' ? safeTime : '';
+// Generate unique ID with safe time value
+          const showtimeId = `${theater.Id}-${safeTime}`;
           
           const price = typeof showtime === 'object' ? showtime.price || 12 : 12;
           const availableSeats = typeof showtime === 'object' ? 
@@ -59,15 +61,14 @@ const TheaterCard = ({ theater, selectedShowtime, onShowtimeSelect }) => {
             Math.floor(Math.random() * 80) + 20;
           
           const showtimeData = {
-            time,
+            time: safeTime,
             price,
             availableSeats
           };
-          
-          return (
+return (
             <ShowtimeButton
               key={index}
-              time={time}
+              time={safeTime}
               price={price}
               availableSeats={availableSeats}
               isAvailable={availableSeats > 0}
