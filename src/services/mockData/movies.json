@@ -1,44 +1,58 @@
 [
   {
-    "Id": 1,
+"Id": 1,
     "title": "Avatar: The Way of Water",
     "poster": "https://images.unsplash.com/photo-1635805737707-575885ab0820?w=400&h=600&fit=crop",
     "rating": 8.2,
     "genre": ["Action", "Adventure", "Sci-Fi"],
     "duration": "3h 12m",
     "language": "English",
-    "releaseDate": "2022-12-16"
+    "releaseDate": "2022-12-16",
+    "director": "James Cameron",
+    "cast": ["Sam Worthington", "Zoe Saldana", "Sigourney Weaver", "Stephen Lang", "Kate Winslet"],
+    "synopsis": "Set more than a decade after the events of the first film, Avatar: The Way of Water begins to tell the story of the Sully family, the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure."
   },
   {
     "Id": 2,
-    "title": "Spider-Man: No Way Home",
+"title": "Spider-Man: No Way Home",
     "poster": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop",
     "rating": 8.4,
     "genre": ["Action", "Adventure", "Fantasy"],
     "duration": "2h 28m",
     "language": "English",
-    "releaseDate": "2021-12-17"
+    "releaseDate": "2021-12-17",
+    "director": "Jon Watts",
+    "cast": ["Tom Holland", "Zendaya", "Benedict Cumberbatch", "Jacob Batalon", "Jon Favreau"],
+    "synopsis": "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man."
   },
   {
     "Id": 3,
     "title": "Black Panther: Wakanda Forever",
+"title": "Black Panther: Wakanda Forever",
     "poster": "https://images.unsplash.com/photo-1608889825103-eb5ed706fc64?w=400&h=600&fit=crop",
     "rating": 7.8,
     "genre": ["Action", "Adventure", "Drama"],
     "duration": "2h 41m",
     "language": "English",
-    "releaseDate": "2022-11-11"
-  },
+    "releaseDate": "2022-11-11",
+    "director": "Ryan Coogler",
+    "cast": ["Letitia Wright", "Angela Bassett", "Tenoch Huerta", "Danai Gurira", "Winston Duke"],
+    "synopsis": "Queen Ramonda, Shuri, M'Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T'Challa's death. As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda."},
   {
     "Id": 4,
     "title": "Top Gun: Maverick",
+    "poster": "https://images.unsplash.com/photo-1583685775914-03a2ca0c3c59?w=400&h=600&fit=crop",
+"title": "Top Gun: Maverick",
     "poster": "https://images.unsplash.com/photo-1583685775914-03a2ca0c3c59?w=400&h=600&fit=crop",
     "rating": 8.6,
     "genre": ["Action", "Drama"],
     "duration": "2h 11m",
     "language": "English",
-    "releaseDate": "2022-05-27"
-  },
+    "releaseDate": "2022-05-27",
+    "director": "Joseph Kosinski",
+    "cast": ["Tom Cruise", "Miles Teller", "Jennifer Connelly", "Jon Hamm", "Glen Powell"],
+    "synopsis": "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him."
+},
   {
     "Id": 5,
     "title": "Doctor Strange in the Multiverse of Madness",
@@ -47,8 +61,11 @@
     "genre": ["Action", "Adventure", "Fantasy"],
     "duration": "2h 6m",
     "language": "English",
-    "releaseDate": "2022-05-06"
-  },
+    "releaseDate": "2022-05-06",
+    "director": "Sam Raimi",
+    "cast": ["Benedict Cumberbatch", "Elizabeth Olsen", "Chiwetel Ejiofor", "Benedict Wong", "Xochitl Gomez"],
+    "synopsis": "Doctor Strange teams up with a mysterious teenage girl from his dreams who can travel across multiverses, to battle multiple threats, including other-universe versions of himself, which threaten to wipe out millions across the multiverse."
+},
   {
     "Id": 6,
     "title": "The Batman",
@@ -57,8 +74,11 @@
     "genre": ["Action", "Crime", "Drama"],
     "duration": "2h 56m",
     "language": "English",
-    "releaseDate": "2022-03-04"
-  },
+    "releaseDate": "2022-03-04",
+    "director": "Matt Reeves",
+    "cast": ["Robert Pattinson", "Zoë Kravitz", "Jeffrey Wright", "Colin Farrell", "Paul Dano"],
+    "synopsis": "When a killer targets Gotham's elite with a series of sadistic machinations, a trail of cryptic clues sends the World's Greatest Detective on an investigation into the underworld, where he encounters such characters as Selina Kyle, The Penguin, Carmine Falcone, and The Riddler."
+},
   {
     "Id": 7,
     "title": "Jurassic World Dominion",
@@ -67,8 +87,11 @@
     "genre": ["Action", "Adventure", "Sci-Fi"],
     "duration": "2h 27m",
     "language": "English",
-    "releaseDate": "2022-06-10"
-  },
+    "releaseDate": "2022-06-10",
+    "director": "Colin Trevorrow",
+    "cast": ["Chris Pratt", "Bryce Dallas Howard", "Laura Dern", "Jeff Goldblum", "Sam Neill"],
+    "synopsis": "Four years after the destruction of Isla Nublar, dinosaurs now live and hunt alongside humans all over the world. This fragile balance will reshape the future and determine, once and for all, whether human beings are to remain the apex predators on a planet they now share with history's most fearsome creatures."
+},
   {
     "Id": 8,
     "title": "Thor: Love and Thunder",
@@ -77,6 +100,8 @@
     "genre": ["Action", "Adventure", "Comedy"],
     "duration": "1h 59m",
     "language": "English",
-    "releaseDate": "2022-07-08"
-  }
+    "releaseDate": "2022-07-08",
+    "director": "Taika Waititi",
+    "cast": ["Chris Hemsworth", "Natalie Portman", "Christian Bale", "Tessa Thompson", "Russell Crowe"],
+    "synopsis": "Thor enlists the help of Valkyrie, Korg and ex-girlfriend Jane Foster to fight Gorr the God Butcher, who intends to make the gods extinct. When Jane Foster mysteriously gains the power to wield Mjolnir, she transforms into the Mighty Thor."}
 ]
