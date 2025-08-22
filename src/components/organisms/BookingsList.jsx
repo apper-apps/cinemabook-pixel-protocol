@@ -158,9 +158,9 @@ const BookingsList = () => {
                       <ApperIcon name="Users" size={14} />
                       <span>Seats</span>
                     </div>
-                    <p className="text-white font-semibold">
-                      {booking.seats ? booking.seats.join(", ") : "N/A"}
-                    </p>
+<p className="text-white font-semibold">
+                    {Array.isArray(booking.seats) ? booking.seats.join(", ") : "N/A"}
+                  </p>
                   </div>
                   
                   <div className="bg-gray-800/50 p-3 rounded-lg">

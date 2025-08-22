@@ -89,41 +89,22 @@ const SeatSelection = () => {
     }, 0);
   };
 
-  const handleBookNow = async () => {
-    if (selectedSeats.length === 0) {
-      toast.error("Please select at least one seat");
-      return;
-    }
+const handleBookNow = () => {
+  if (selectedSeats.length === 0) {
+    toast.error("Please select at least one seat");
+    return;
+  }
 
-    try {
-      setProcessing(true);
-      
-      const booking = {
-        movieId: parseInt(movieId),
-        movieTitle: movie.title,
-        theater: theater.name,
-        showtime: showtime.time,
-        date: new Date().toISOString().split('T')[0],
-        seats: selectedSeats.map(seat => ({
-          row: seat.row,
-          number: seat.number,
-          category: seat.category,
-          price: seatCategories[seat.category].price
-        })),
-        totalAmount: getTotalPrice(),
-        status: "confirmed"
-      };
-
-      await bookingsService.create(booking);
-      toast.success(`Booking confirmed! ${selectedSeats.length} seats booked for $${getTotalPrice()}`);
-      navigate("/bookings");
-      
-    } catch (err) {
-      toast.error("Failed to create booking. Please try again.");
-    } finally {
-      setProcessing(false);
+  navigate(`/movie/${movieId}/theaters/${theaterId}/confirm`, {
+    state: {
+      theater,
+      showtime,
+      selectedSeats,
+      movie,
+      totalPrice: getTotalPrice()
     }
-  };
+  });
+};
 
   const getSeatStatus = (seat) => {
     const seatId = `${seat.row}-${seat.number}`;
@@ -318,34 +299,24 @@ const SeatSelection = () => {
               </div>
             </div>
 
-            <div className="flex gap-4">
-              <Button
-                variant="ghost"
-                onClick={() => setSelectedSeats([])}
-                className="flex-1"
-              >
-                Clear Selection
-              </Button>
-              <Button
-                variant="primary"
-                onClick={handleBookNow}
-                disabled={processing}
-                className="flex-1"
-              >
-                {processing ? (
-                  <>
-                    <ApperIcon name="Loader2" size={16} className="mr-2 animate-spin" />
-                    Processing...
-                  </>
-                ) : (
-                  <>
-                    <ApperIcon name="CreditCard" size={16} className="mr-2" />
-                    Book Now (${getTotalPrice()})
-                  </>
-                )}
-              </Button>
-            </div>
-          </motion.div>
+<div className="flex gap-4">
+            <Button
+              variant="ghost"
+              onClick={() => setSelectedSeats([])}
+              className="flex-1"
+            >
+              Clear Selection
+            </Button>
+            <Button
+              variant="primary"
+              onClick={handleBookNow}
+              className="flex-1"
+            >
+              <ApperIcon name="ArrowRight" size={16} className="mr-2" />
+              Continue to Booking (${getTotalPrice()})
+            </Button>
+          </div>
+        </motion.div>
         )}
       </div>
     </div>

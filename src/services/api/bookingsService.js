@@ -23,7 +23,7 @@ async create(booking) {
     ...booking,
     Id: Math.max(...bookingsData.map(b => b.Id), 0) + 1,
     bookingDate: new Date().toISOString(),
-    seats: booking.seats || [],
+    seats: booking.seats ? booking.seats.map(seat => `${seat.row}${seat.number}`) : [],
     totalAmount: booking.totalAmount || 0
   };
   bookingsData.push(newBooking);

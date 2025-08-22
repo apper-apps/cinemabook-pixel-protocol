@@ -6,6 +6,7 @@ import Movies from "@/components/pages/Movies";
 import MovieDetails from "@/components/pages/MovieDetails";
 import MovieTheaterSelection from "@/components/pages/MovieTheaterSelection";
 import SeatSelection from "@/components/pages/SeatSelection";
+import BookingConfirmation from "@/components/pages/BookingConfirmation";
 import Theaters from "@/components/pages/Theaters";
 import Bookings from "@/components/pages/Bookings";
 function App() {
@@ -17,6 +18,7 @@ function App() {
 <Route path="movie/:id" element={<MovieDetails />} />
 <Route path="movie/:id/theaters" element={<MovieTheaterSelection />} />
 <Route path="movie/:id/theaters/:theaterId/seats" element={<SeatSelection />} />
+<Route path="movie/:id/theaters/:theaterId/confirm" element={<BookingConfirmation />} />
 <Route path="theaters" element={<Theaters />} />
 <Route path="bookings" element={<Bookings />} />
         </Route>
