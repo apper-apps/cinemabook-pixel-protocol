@@ -42,11 +42,21 @@ const TheaterCard = ({ theater, selectedShowtime, onShowtimeSelect }) => {
       <div className="space-y-3">
         <h4 className="text-sm font-medium text-gray-300">Available Showtimes</h4>
 <div className="flex flex-wrap gap-2">
-{theater.showtimes.map((showtime, index) => {
-          const showtimeId = `${theater.Id}-${typeof showtime === 'string' ? showtime : showtime.time}`;
-          const time = typeof showtime === 'string' ? showtime : showtime.time;
-          const price = typeof showtime === 'object' ? showtime.price : 12;
-          const availableSeats = typeof showtime === 'object' ? showtime.availableSeats : Math.floor(Math.random() * 80) + 20;
+{theater.showtimes?.map((showtime, index) => {
+          // Ensure showtime is valid and has required properties
+          if (!showtime) return null;
+          
+          // Extract time with null safety - ensure it's always a string
+          const rawTime = typeof showtime === 'string' ? showtime : showtime?.time;
+          const time = rawTime && typeof rawTime === 'string' ? rawTime : 'TBA';
+          
+          // Generate unique ID with safe time value
+          const showtimeId = `${theater.Id}-${time}`;
+          
+          const price = typeof showtime === 'object' ? showtime.price || 12 : 12;
+          const availableSeats = typeof showtime === 'object' ? 
+            showtime.availableSeats || 0 : 
+            Math.floor(Math.random() * 80) + 20;
           
           const showtimeData = {
             time,
@@ -65,7 +75,7 @@ const TheaterCard = ({ theater, selectedShowtime, onShowtimeSelect }) => {
               onClick={() => onShowtimeSelect(showtimeId, theater, showtimeData)}
             />
           );
-        })}
+        }) || null}
       </div>
       </div>
     </motion.div>

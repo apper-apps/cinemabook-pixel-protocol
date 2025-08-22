@@ -12,9 +12,12 @@ const ShowtimeButton = ({
   onClick,
   className 
 }) => {
+  // Validate time prop to prevent .split() errors
+  const safeTime = time && typeof time === 'string' ? time : 'TBA';
+  
   const handleClick = () => {
     if (isAvailable && onClick) {
-      onClick(time);
+      onClick(safeTime);
     }
   };
 
@@ -35,7 +38,7 @@ const ShowtimeButton = ({
         )}
         disabled={!isAvailable}
       >
-        <span className="font-medium text-sm">{time}</span>
+<span className="font-medium text-sm">{safeTime}</span>
         <span className="text-xs opacity-80 mt-1">
           {isAvailable ? `$${price}` : "Full"}
         </span>
