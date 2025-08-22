@@ -48,9 +48,11 @@ const TheaterCard = ({ theater, selectedShowtime, onShowtimeSelect }) => {
           const price = typeof showtime === 'object' ? showtime.price : 12;
           const availableSeats = typeof showtime === 'object' ? showtime.availableSeats : Math.floor(Math.random() * 80) + 20;
           
-          const showtimeObj = typeof showtime === 'string' 
-            ? { time: showtime, price, availableSeats }
-            : showtime;
+          const showtimeData = {
+            time,
+            price,
+            availableSeats
+          };
           
           return (
             <ShowtimeButton
@@ -60,7 +62,7 @@ const TheaterCard = ({ theater, selectedShowtime, onShowtimeSelect }) => {
               availableSeats={availableSeats}
               isAvailable={availableSeats > 0}
               isSelected={selectedShowtime === showtimeId}
-              onClick={() => onShowtimeSelect(showtimeId, theater, showtimeObj)}
+              onClick={() => onShowtimeSelect(showtimeId, theater, showtimeData)}
             />
           );
         })}
