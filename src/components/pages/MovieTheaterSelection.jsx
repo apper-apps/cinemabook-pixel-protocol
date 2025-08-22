@@ -20,7 +20,7 @@ const MovieTheaterSelection = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [selectedShowtime, setSelectedShowtime] = useState(null);
-  const [selectedTheater, setSelectedTheater] = useState(null);
+const [selectedTheater, setSelectedTheater] = useState(null);
 
   const loadData = async () => {
     try {
@@ -45,7 +45,7 @@ const MovieTheaterSelection = () => {
     loadData();
   }, [id]);
 
-  const handleShowtimeSelect = (showtimeId, theater, showtime) => {
+const handleShowtimeSelect = (showtimeId, theater, showtime) => {
     setSelectedShowtime(showtimeId);
     setSelectedTheater({ theater, showtime });
   };
@@ -56,10 +56,12 @@ const handleProceedToBooking = () => {
       return;
     }
 
+    toast.success(`Proceeding to seat selection for ${selectedTheater.theater.name}`);
     navigate(`/movie/${id}/theaters/${selectedTheater.theater.Id}/seats`, {
       state: {
         theater: selectedTheater.theater,
-        showtime: selectedTheater.showtime
+        showtime: selectedTheater.showtime,
+        movie
       }
     });
   };
@@ -141,7 +143,7 @@ const handleProceedToBooking = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          {theaters.map((theater, index) => (
+{theaters.map((theater, index) => (
             <motion.div
               key={theater.Id}
               initial={{ opacity: 0, y: 30 }}
@@ -157,28 +159,39 @@ const handleProceedToBooking = () => {
           ))}
         </div>
 
-        {/* Proceed Button */}
+{/* Proceed Button */}
         {selectedTheater && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-surface rounded-xl p-6 border border-primary/20"
+            className="bg-surface rounded-xl p-6 border border-primary/20 shadow-lg"
           >
-            <div className="flex items-center justify-between">
-              <div>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex-1">
                 <h4 className="text-lg font-semibold text-white mb-1">
                   Selected: {selectedTheater.theater.name}
                 </h4>
-                <p className="text-gray-400 text-sm">
-                  {selectedTheater.showtime.time} • ${selectedTheater.showtime.price} per ticket • {selectedTheater.showtime.availableSeats} seats available
-                </p>
+                <div className="flex flex-wrap items-center gap-4 text-gray-400 text-sm">
+                  <div className="flex items-center gap-1">
+                    <ApperIcon name="Clock" size={14} />
+                    <span>{selectedTheater.showtime.time}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <ApperIcon name="DollarSign" size={14} />
+                    <span>${selectedTheater.showtime.price} per ticket</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <ApperIcon name="Users" size={14} />
+                    <span>{selectedTheater.showtime.availableSeats} seats available</span>
+                  </div>
+                </div>
               </div>
               
               <Button
                 variant="primary"
                 size="lg"
                 onClick={handleProceedToBooking}
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 w-full sm:w-auto"
               >
                 Proceed to Seats
                 <ApperIcon name="ArrowRight" size={16} />
