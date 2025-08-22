@@ -41,16 +41,25 @@ const TheaterCard = ({ theater, selectedShowtime, onShowtimeSelect }) => {
 
       <div className="space-y-3">
         <h4 className="text-sm font-medium text-gray-300">Available Showtimes</h4>
-        <div className="flex flex-wrap gap-2">
-          {theater.showtimes.map((time, index) => (
-            <ShowtimeButton
-              key={index}
-              time={time}
-              isAvailable={Math.random() > 0.2} // Random availability for demo
-              isSelected={selectedShowtime === `${theater.Id}-${time}`}
-              onClick={() => onShowtimeSelect(`${theater.Id}-${time}`, theater, time)}
-            />
-          ))}
+<div className="flex flex-wrap gap-2">
+          {theater.showtimes.map((showtime, index) => {
+            const showtimeId = `${theater.Id}-${typeof showtime === 'string' ? showtime : showtime.time}`;
+            const time = typeof showtime === 'string' ? showtime : showtime.time;
+            const price = typeof showtime === 'object' ? showtime.price : 12;
+            const availableSeats = typeof showtime === 'object' ? showtime.availableSeats : Math.floor(Math.random() * 80) + 20;
+            
+            return (
+              <ShowtimeButton
+                key={index}
+                time={time}
+                price={price}
+                availableSeats={availableSeats}
+                isAvailable={availableSeats > 0}
+                isSelected={selectedShowtime === showtimeId}
+                onClick={() => onShowtimeSelect(showtimeId, theater, showtime)}
+              />
+            );
+          })}
         </div>
       </div>
     </motion.div>

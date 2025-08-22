@@ -5,6 +5,8 @@ import { cn } from "@/utils/cn";
 
 const ShowtimeButton = ({ 
   time, 
+  price = 12,
+  availableSeats = 50,
   isAvailable = true, 
   isSelected = false, 
   onClick,
@@ -17,13 +19,13 @@ const ShowtimeButton = ({
   };
 
   return (
-    <motion.div whileTap={{ scale: isAvailable ? 0.95 : 1 }}>
+<motion.div whileTap={{ scale: isAvailable ? 0.95 : 1 }}>
       <Button
         variant={isSelected ? "primary" : isAvailable ? "ghost" : "secondary"}
         size="sm"
         onClick={handleClick}
         className={cn(
-          "border transition-all duration-200",
+          "border transition-all duration-200 flex-col items-center px-4 py-3 h-auto min-w-[100px]",
           isAvailable 
             ? isSelected 
               ? "border-primary shadow-lg shadow-primary/30" 
@@ -33,8 +35,15 @@ const ShowtimeButton = ({
         )}
         disabled={!isAvailable}
       >
-        {time}
-        {!isAvailable && <span className="ml-1 text-xs">(Full)</span>}
+        <span className="font-medium text-sm">{time}</span>
+        <span className="text-xs opacity-80 mt-1">
+          {isAvailable ? `$${price}` : "Full"}
+        </span>
+        {isAvailable && availableSeats < 20 && (
+          <span className="text-xs text-warning mt-1">
+            {availableSeats} left
+          </span>
+        )}
       </Button>
     </motion.div>
   );

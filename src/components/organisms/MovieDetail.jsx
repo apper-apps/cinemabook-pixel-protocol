@@ -40,9 +40,9 @@ const MovieDetail = () => {
     navigate("/");
   };
 
-  const handleBookTickets = () => {
-    toast.success(`Booking initiated for "${movie.title}"! Redirecting to ticket selection...`);
-    // Future: navigate to booking flow
+const handleBookTickets = () => {
+    toast.success(`Finding theaters for "${movie.title}"...`);
+    navigate(`/movie/${movie.Id}/theaters`);
   };
 
   if (loading) return <Loading />;

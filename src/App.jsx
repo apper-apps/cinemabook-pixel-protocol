@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import Layout from "@/components/organisms/Layout";
 import Movies from "@/components/pages/Movies";
 import MovieDetails from "@/components/pages/MovieDetails";
+import MovieTheaterSelection from "@/components/pages/MovieTheaterSelection";
 import Theaters from "@/components/pages/Theaters";
 import Bookings from "@/components/pages/Bookings";
 
@@ -13,7 +14,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Movies />} />
-          <Route path="movie/:id" element={<MovieDetails />} />
+<Route path="movie/:id" element={<MovieDetails />} />
+          <Route path="movie/:id/theaters" element={<MovieTheaterSelection />} />
           <Route path="theaters" element={<Theaters />} />
           <Route path="bookings" element={<Bookings />} />
         </Route>
