@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "movieId": "1",
+    "theaterId": "1",
+    "showtime": "7:45 PM",
+    "seats": ["A12", "A13"],
+    "bookingDate": "2024-01-25"
+  },
+  {
+    "Id": 2,
+    "movieId": "4",
+    "theaterId": "2",
+    "showtime": "9:00 PM",
+    "seats": ["C5", "C6", "C7"],
+    "bookingDate": "2024-01-20"
+  },
+  {
+    "Id": 3,
+    "movieId": "2",
+    "theaterId": "3",
+    "showtime": "6:30 PM",
+    "seats": ["B8", "B9"],
+    "bookingDate": "2024-01-15"
+  }
+]

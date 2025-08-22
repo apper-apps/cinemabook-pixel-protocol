@@ -1,0 +1,37 @@
+[
+  {
+    "Id": 1,
+    "name": "IMAX Downtown",
+    "location": "123 Main Street, Downtown",
+    "showtimes": ["10:00 AM", "1:15 PM", "4:30 PM", "7:45 PM", "10:30 PM"],
+    "amenities": ["IMAX", "Dolby Atmos"]
+  },
+  {
+    "Id": 2,
+    "name": "Cineplex Mall of America",
+    "location": "456 Shopping Blvd, Mall District",
+    "showtimes": ["11:00 AM", "2:20 PM", "5:40 PM", "9:00 PM"],
+    "amenities": ["4DX", "Dolby Atmos"]
+  },
+  {
+    "Id": 3,
+    "name": "Metro Cinema Center",
+    "location": "789 Cinema Avenue, Metro City",
+    "showtimes": ["12:00 PM", "3:15 PM", "6:30 PM", "9:45 PM"],
+    "amenities": ["Dolby Atmos"]
+  },
+  {
+    "Id": 4,
+    "name": "Starlight Drive-In",
+    "location": "321 Highway 101, Suburbs",
+    "showtimes": ["7:00 PM", "10:15 PM"],
+    "amenities": []
+  },
+  {
+    "Id": 5,
+    "name": "Premium Palace",
+    "location": "654 Luxury Lane, Uptown",
+    "showtimes": ["1:00 PM", "4:15 PM", "7:30 PM", "10:45 PM"],
+    "amenities": ["IMAX", "4DX", "Dolby Atmos"]
+  }
+]

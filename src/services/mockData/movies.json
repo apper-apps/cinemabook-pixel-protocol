@@ -1,0 +1,82 @@
+[
+  {
+    "Id": 1,
+    "title": "Avatar: The Way of Water",
+    "poster": "https://images.unsplash.com/photo-1635805737707-575885ab0820?w=400&h=600&fit=crop",
+    "rating": 8.2,
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "duration": "3h 12m",
+    "language": "English",
+    "releaseDate": "2022-12-16"
+  },
+  {
+    "Id": 2,
+    "title": "Spider-Man: No Way Home",
+    "poster": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop",
+    "rating": 8.4,
+    "genre": ["Action", "Adventure", "Fantasy"],
+    "duration": "2h 28m",
+    "language": "English",
+    "releaseDate": "2021-12-17"
+  },
+  {
+    "Id": 3,
+    "title": "Black Panther: Wakanda Forever",
+    "poster": "https://images.unsplash.com/photo-1608889825103-eb5ed706fc64?w=400&h=600&fit=crop",
+    "rating": 7.8,
+    "genre": ["Action", "Adventure", "Drama"],
+    "duration": "2h 41m",
+    "language": "English",
+    "releaseDate": "2022-11-11"
+  },
+  {
+    "Id": 4,
+    "title": "Top Gun: Maverick",
+    "poster": "https://images.unsplash.com/photo-1583685775914-03a2ca0c3c59?w=400&h=600&fit=crop",
+    "rating": 8.6,
+    "genre": ["Action", "Drama"],
+    "duration": "2h 11m",
+    "language": "English",
+    "releaseDate": "2022-05-27"
+  },
+  {
+    "Id": 5,
+    "title": "Doctor Strange in the Multiverse of Madness",
+    "poster": "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?w=400&h=600&fit=crop",
+    "rating": 7.5,
+    "genre": ["Action", "Adventure", "Fantasy"],
+    "duration": "2h 6m",
+    "language": "English",
+    "releaseDate": "2022-05-06"
+  },
+  {
+    "Id": 6,
+    "title": "The Batman",
+    "poster": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=600&fit=crop",
+    "rating": 8.1,
+    "genre": ["Action", "Crime", "Drama"],
+    "duration": "2h 56m",
+    "language": "English",
+    "releaseDate": "2022-03-04"
+  },
+  {
+    "Id": 7,
+    "title": "Jurassic World Dominion",
+    "poster": "https://images.unsplash.com/photo-1618365908648-e71bd5d5e5af?w=400&h=600&fit=crop",
+    "rating": 6.8,
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "duration": "2h 27m",
+    "language": "English",
+    "releaseDate": "2022-06-10"
+  },
+  {
+    "Id": 8,
+    "title": "Thor: Love and Thunder",
+    "poster": "https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?w=400&h=600&fit=crop",
+    "rating": 7.2,
+    "genre": ["Action", "Adventure", "Comedy"],
+    "duration": "1h 59m",
+    "language": "English",
+    "releaseDate": "2022-07-08"
+  }
+]
