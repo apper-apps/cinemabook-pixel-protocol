@@ -5,9 +5,9 @@ import Layout from "@/components/organisms/Layout";
 import Movies from "@/components/pages/Movies";
 import MovieDetails from "@/components/pages/MovieDetails";
 import MovieTheaterSelection from "@/components/pages/MovieTheaterSelection";
+import SeatSelection from "@/components/pages/SeatSelection";
 import Theaters from "@/components/pages/Theaters";
 import Bookings from "@/components/pages/Bookings";
-
 function App() {
   return (
     <BrowserRouter>
@@ -15,9 +15,10 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Movies />} />
 <Route path="movie/:id" element={<MovieDetails />} />
-          <Route path="movie/:id/theaters" element={<MovieTheaterSelection />} />
-          <Route path="theaters" element={<Theaters />} />
-          <Route path="bookings" element={<Bookings />} />
+<Route path="movie/:id/theaters" element={<MovieTheaterSelection />} />
+<Route path="movie/:id/theaters/:theaterId/seats" element={<SeatSelection />} />
+<Route path="theaters" element={<Theaters />} />
+<Route path="bookings" element={<Bookings />} />
         </Route>
       </Routes>
       

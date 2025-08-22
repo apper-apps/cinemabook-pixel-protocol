@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
-import Button from "@/components/atoms/Button";
-import Badge from "@/components/atoms/Badge";
-import ApperIcon from "@/components/ApperIcon";
-import Loading from "@/components/ui/Loading";
-import Error from "@/components/ui/Error";
-import TheaterCard from "@/components/molecules/TheaterCard";
 import { moviesService } from "@/services/api/moviesService";
 import { theatersService } from "@/services/api/theatersService";
+import ApperIcon from "@/components/ApperIcon";
+import Theaters from "@/components/pages/Theaters";
+import Badge from "@/components/atoms/Badge";
+import Button from "@/components/atoms/Button";
+import TheaterCard from "@/components/molecules/TheaterCard";
+import Loading from "@/components/ui/Loading";
+import Error from "@/components/ui/Error";
 
 const MovieTheaterSelection = () => {
   const { id } = useParams();
@@ -49,14 +50,18 @@ const MovieTheaterSelection = () => {
     setSelectedTheater({ theater, showtime });
   };
 
-  const handleProceedToBooking = () => {
+const handleProceedToBooking = () => {
     if (!selectedTheater) {
       toast.error("Please select a showtime first");
       return;
     }
 
-    toast.success(`Proceeding to seat selection for ${selectedTheater.theater.name} at ${selectedTheater.showtime.time}`);
-    // Future: Navigate to seat selection with theater and showtime data
+    navigate(`/movie/${id}/theaters/${selectedTheater.theater.Id}/seats`, {
+      state: {
+        theater: selectedTheater.theater,
+        showtime: selectedTheater.showtime
+      }
+    });
   };
 
   const handleBackClick = () => {

@@ -42,25 +42,29 @@ const TheaterCard = ({ theater, selectedShowtime, onShowtimeSelect }) => {
       <div className="space-y-3">
         <h4 className="text-sm font-medium text-gray-300">Available Showtimes</h4>
 <div className="flex flex-wrap gap-2">
-          {theater.showtimes.map((showtime, index) => {
-            const showtimeId = `${theater.Id}-${typeof showtime === 'string' ? showtime : showtime.time}`;
-            const time = typeof showtime === 'string' ? showtime : showtime.time;
-            const price = typeof showtime === 'object' ? showtime.price : 12;
-            const availableSeats = typeof showtime === 'object' ? showtime.availableSeats : Math.floor(Math.random() * 80) + 20;
-            
-            return (
-              <ShowtimeButton
-                key={index}
-                time={time}
-                price={price}
-                availableSeats={availableSeats}
-                isAvailable={availableSeats > 0}
-                isSelected={selectedShowtime === showtimeId}
-                onClick={() => onShowtimeSelect(showtimeId, theater, showtime)}
-              />
-            );
-          })}
-        </div>
+{theater.showtimes.map((showtime, index) => {
+          const showtimeId = `${theater.Id}-${typeof showtime === 'string' ? showtime : showtime.time}`;
+          const time = typeof showtime === 'string' ? showtime : showtime.time;
+          const price = typeof showtime === 'object' ? showtime.price : 12;
+          const availableSeats = typeof showtime === 'object' ? showtime.availableSeats : Math.floor(Math.random() * 80) + 20;
+          
+          const showtimeObj = typeof showtime === 'string' 
+            ? { time: showtime, price, availableSeats }
+            : showtime;
+          
+          return (
+            <ShowtimeButton
+              key={index}
+              time={time}
+              price={price}
+              availableSeats={availableSeats}
+              isAvailable={availableSeats > 0}
+              isSelected={selectedShowtime === showtimeId}
+              onClick={() => onShowtimeSelect(showtimeId, theater, showtimeObj)}
+            />
+          );
+        })}
+      </div>
       </div>
     </motion.div>
   );

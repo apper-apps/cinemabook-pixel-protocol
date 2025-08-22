@@ -3,35 +3,84 @@
     "Id": 1,
     "name": "IMAX Downtown",
     "location": "123 Main Street, Downtown",
-    "showtimes": ["10:00 AM", "1:15 PM", "4:30 PM", "7:45 PM", "10:30 PM"],
-    "amenities": ["IMAX", "Dolby Atmos"]
+    "showtimes": [
+      {"time": "10:00 AM", "price": 25, "availableSeats": 45},
+      {"time": "1:15 PM", "price": 28, "availableSeats": 32},
+      {"time": "4:30 PM", "price": 30, "availableSeats": 18},
+      {"time": "7:45 PM", "price": 32, "availableSeats": 67},
+      {"time": "10:30 PM", "price": 28, "availableSeats": 89}
+    ],
+    "amenities": ["IMAX", "Dolby Atmos"],
+    "seatLayout": {
+      "rows": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+      "seatsPerRow": 12,
+      "categories": ["Premium", "Gold", "Silver"]
+    }
   },
   {
     "Id": 2,
     "name": "Cineplex Mall of America",
     "location": "456 Shopping Blvd, Mall District",
-    "showtimes": ["11:00 AM", "2:20 PM", "5:40 PM", "9:00 PM"],
-    "amenities": ["4DX", "Dolby Atmos"]
+    "showtimes": [
+      {"time": "11:00 AM", "price": 18, "availableSeats": 56},
+      {"time": "2:20 PM", "price": 22, "availableSeats": 41},
+      {"time": "5:40 PM", "price": 25, "availableSeats": 23},
+      {"time": "9:00 PM", "price": 25, "availableSeats": 72}
+    ],
+    "amenities": ["4DX", "Dolby Atmos"],
+    "seatLayout": {
+      "rows": ["A", "B", "C", "D", "E", "F", "G", "H"],
+      "seatsPerRow": 14,
+      "categories": ["Premium", "Gold", "Silver"]
+    }
   },
   {
     "Id": 3,
     "name": "Metro Cinema Center",
     "location": "789 Cinema Avenue, Metro City",
-    "showtimes": ["12:00 PM", "3:15 PM", "6:30 PM", "9:45 PM"],
-    "amenities": ["Dolby Atmos"]
+    "showtimes": [
+      {"time": "12:00 PM", "price": 15, "availableSeats": 78},
+      {"time": "3:15 PM", "price": 18, "availableSeats": 65},
+      {"time": "6:30 PM", "price": 22, "availableSeats": 34},
+      {"time": "9:45 PM", "price": 22, "availableSeats": 91}
+    ],
+    "amenities": ["Dolby Atmos"],
+    "seatLayout": {
+      "rows": ["A", "B", "C", "D", "E", "F", "G"],
+      "seatsPerRow": 16,
+      "categories": ["Premium", "Gold", "Silver"]
+    }
   },
   {
     "Id": 4,
     "name": "Starlight Drive-In",
     "location": "321 Highway 101, Suburbs",
-    "showtimes": ["7:00 PM", "10:15 PM"],
-    "amenities": []
+    "showtimes": [
+      {"time": "7:00 PM", "price": 12, "availableSeats": 45},
+      {"time": "10:15 PM", "price": 12, "availableSeats": 67}
+    ],
+    "amenities": [],
+    "seatLayout": {
+      "rows": ["A", "B", "C", "D", "E"],
+      "seatsPerRow": 20,
+      "categories": ["Silver"]
+    }
   },
   {
     "Id": 5,
     "name": "Premium Palace",
     "location": "654 Luxury Lane, Uptown",
-    "showtimes": ["1:00 PM", "4:15 PM", "7:30 PM", "10:45 PM"],
-    "amenities": ["IMAX", "4DX", "Dolby Atmos"]
+    "showtimes": [
+      {"time": "1:00 PM", "price": 35, "availableSeats": 28},
+      {"time": "4:15 PM", "price": 40, "availableSeats": 19},
+      {"time": "7:30 PM", "price": 45, "availableSeats": 12},
+      {"time": "10:45 PM", "price": 40, "availableSeats": 33}
+    ],
+    "amenities": ["IMAX", "4DX", "Dolby Atmos"],
+    "seatLayout": {
+      "rows": ["A", "B", "C", "D", "E", "F"],
+      "seatsPerRow": 10,
+      "categories": ["Premium", "Gold", "Silver"]
+    }
   }
 ]

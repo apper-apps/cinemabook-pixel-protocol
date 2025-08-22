@@ -17,14 +17,17 @@ export const bookingsService = {
     return { ...booking };
   },
 
-  async create(booking) {
-    await delay(500);
-    const newBooking = {
-      ...booking,
-      Id: Math.max(...bookingsData.map(b => b.Id), 0) + 1
-    };
-    bookingsData.push(newBooking);
-    return { ...newBooking };
+async create(booking) {
+  await delay(500);
+  const newBooking = {
+    ...booking,
+    Id: Math.max(...bookingsData.map(b => b.Id), 0) + 1,
+    bookingDate: new Date().toISOString(),
+    seats: booking.seats || [],
+    totalAmount: booking.totalAmount || 0
+  };
+  bookingsData.push(newBooking);
+  return { ...newBooking };
   },
 
   async update(id, updates) {
